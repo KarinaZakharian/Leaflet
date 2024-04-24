@@ -1,3 +1,69 @@
-$color: #fff;
-$color-primary: #61dafb;
-$color-bg: #282c34;
+$color-main: white;
+$color-flash: #3794d1;
+$color-hover: rgb(212, 126, 7);
+$color-add: black;
+$color-background: rgb(123, 125, 130);
+$header-background: rgb(33, 32, 32);
+$aside-background: rgb(231, 223, 223);
+
+@mixin card-styling {
+  border-radius: 10px;
+  border: 2px solid $color-add;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70%;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@mixin title-form-text {
+  text-align: center;
+  color: $color-main;
+  font-weight: 500;
+  font-size: 30px;
+}
+
+@mixin title-form-text-phone {
+  font-weight: 400;
+  font-size: 20px;
+}
+
+@mixin label {
+  color: $color-main;
+  font-size: 20px;
+  font-weight: 500;
+  text-align: left;
+}
+
+@mixin label-phone {
+  font-size: 15px;
+  font-weight: 500;
+}
+@mixin radio-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin input-field {
+  padding: 10px 5px 10px 35px;
+  font-size: 15px;
+  font-weight: 400;
+border: none;
+  background-color: white;
+ position: relative;
+}
+
+@mixin input-field-phone {
+  font-size: 10px;
+}
+
+@mixin form-styling {
+  background-color: $header-background;
+  border-radius: 10px;
+  border: 2px solid $color-add;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 35px;
+}

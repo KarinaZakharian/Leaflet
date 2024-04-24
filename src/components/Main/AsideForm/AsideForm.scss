@@ -1,0 +1,153 @@
+@use '/src/styles/variables' as v;
+.aside{
+    background-color: v.$color-main;
+   
+}
+.filtre{
+    background-color: v.$aside-background;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    &__button{
+        background-color: v.$color-flash;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        font-size: 15px;
+        font-weight: 400;
+       
+    }
+}
+.hamburger-menu {
+    .category {
+        display: flex;
+        flex-direction: column;
+        font-size: 15px;
+        font-weight: 500;
+    
+      cursor: pointer;
+      padding: 10px;
+      
+     &__title{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        transition: all 0.5s ease;
+        padding:5px 10px;
+     }
+  
+      .sub-categories {
+        margin-top: 5px;
+        display: flex;
+        flex-direction: column;
+        padding:5px 10px;
+        &__title{
+        color: v.$color-background;
+        
+        }
+  
+        span {
+          padding: 5px;
+        }
+      }
+    }
+  }
+
+  .text.closed {
+    color: v.$color-flash;
+}
+
+.text.open {
+    color: v.$color-background;
+}
+
+.category__title.open{
+    flex-direction: row-reverse;
+}
+
+.arrow{
+    background-color: v.$color-main;
+    border: none;
+}
+.price__category{
+    display: flex;
+    flex-direction: row;
+    gap:10px;
+    padding: 30px 10px;
+    &__line{
+        border-left: 2px solid v.$color-background;
+    }
+    &__title{
+        font-size: 20px;
+        font-weight: 500;
+        color: v.$color-background;
+    }
+    &__input{
+        padding: 10px;
+        font-size: 15px;
+        font-weight: 400;
+        border: none;
+        background-color: white;
+    }
+}
+.min, .max{
+    padding:5px;
+    width:100%;
+    background-color: v.$aside-background;
+}
+
+.max{
+    text-align: right;  
+}
+.price__title{
+    font-size:20px;
+    font-weight: 500;
+    color: v.$color-background;
+    margin: 10px;
+}
+.reviews{
+    padding:20px;
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+
+    &__title{
+        font-size: 20px;
+        font-weight: 500;
+        color: v.$color-background;
+       
+    }
+
+    &__info{
+    color: v.$header-background;
+    font-weight: 600;
+    }
+}
+.form__label{
+    display: flex;
+    gap:15px;
+    text-align: center;
+    color: v.$header-background;
+    font-weight: 600;
+}
+.css-1qqgbpl-MuiRating-root {
+    display: flex;
+    position: relative;
+    font-size: 1.5rem;
+    color: #faaf00;
+    cursor: pointer;
+    text-align: left;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.css-1qqgbpl-MuiRating-root {
+    width: 100%;
+    justify-content: center;
+}
+.css-jm3i9k{
+flex-direction: column;
+justify-content: center;
+}

@@ -1,0 +1,117 @@
+@use '/src/styles/variables' as v;
+
+.sub-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: v.$color-flash;
+  border-bottom: 5px solid v.$color-flash;
+  
+  &__flash {
+    background-color: v.$color-flash;
+    display: flex;
+    justify-content: flex-end;
+    width: 33.33%;
+  
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+  }
+}
+
+.container {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  background-color: v.$header-background;
+  color: v.$color-main;
+  width: 70%;
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @media screen and (max-width: 768px) {
+   flex-direction: column;
+  }
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+ 
+  color: v.$color-background;
+  font-size: 30px;
+  font-weight: 700;
+
+  @media screen and (max-width: 768px) {
+    font-size: 15px;
+   align-self: center;
+
+  }
+}
+
+.header__logo-title {
+  color: v.$color-background;
+  font-size: 30px;
+  padding-right: 20px;
+  text-decoration: none;
+
+
+}
+
+.header__buttons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding:10px;
+  @media screen and (max-width: 768px) {
+   width:100%;
+    justify-content: space-between;
+  }
+}
+
+.header__buttons-button {
+  display: flex;
+  gap: 10px;
+}
+
+.header__line {
+  border-left: 3px solid v.$color-background;
+}
+
+.header__select {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  color: v.$color-background;
+  font-size: 15px;
+  padding: 5px 10px;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: v.$color-background;
+  text-decoration: none;
+  padding: 5px 10px;
+  font-size:15px;
+
+  &:hover {
+    background-color: v.$color-hover;
+    color: v.$color-main;
+    border-radius: 20px;
+  }
+}
+
+.logo-img {
+ margin-left:-30px;
+; // Add your styles here
+}

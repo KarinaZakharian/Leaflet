@@ -1,0 +1,32 @@
+@use '/src/styles/variables' as v;
+
+.page-wrapper {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.1);
+  height: 100vh;
+}
+
+.create-form {
+  @include v.form-styling;
+  width: 70%;
+  gap:10px;
+
+  &__title {
+    @include v.title-form-text;
+  }
+}
+.label-form {
+  @include v.label;
+  margin: 20px 0 10px;
+}
+.price__form{
+  display: flex;
+  flex-direction: row;
+}
+.price{
+  width:100%;
+}
