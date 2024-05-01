@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
 import Selector from './Select';
 
-const CurrencySelector = ({ selectedCurrency, setSelectedCurrency }) => {
+interface Currency{
+  selectedCurrency : string;
+  setSelectedCurrency: React.Dispatch<React.SetStateAction<string>>
+}
+
+const CurrencySelector = ({ selectedCurrency, setSelectedCurrency}:Currency) => {
   const currencies = [
     { value: 'USD', label: 'USD' },
     { value: 'EUR', label: 'EUR' },
@@ -11,7 +16,7 @@ const CurrencySelector = ({ selectedCurrency, setSelectedCurrency }) => {
 
 
 
-  const handleCurrencyChange = (newCurrency) => {
+  const handleCurrencyChange = (newCurrency: string) => {
     setSelectedCurrency(newCurrency);
     // Perform any additional logic here based on the selected currency
   };

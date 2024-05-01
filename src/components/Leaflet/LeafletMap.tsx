@@ -6,13 +6,23 @@ import './LeafletMap.scss';
 import CardHolder from '../Main/CardsHolder';
 import { useAppDispatch, useAppSelector } from '../../hooks/redux';
 
+interface Item {
+  id: number;
+  latitude: number;
+  longitude: number;
+  name: string;
+  description: string;
+  price: string;
+  photo: string;
+  user_address: string;}
+
 function LeafletMap() {
   const data = useAppSelector((state) => state.card);
   console.log(data)
-  const [selectedMarker, setSelectedMarker] = useState(null);
+  const [selectedMarker, setSelectedMarker] = useState<Item | null>(null);
   const [displayData, setDisplayData] = useState(data);
 
-  const handleMarkerClick = (item) => {
+  const handleMarkerClick = (item: Item) => {
     console.log("Marker clicked:", item);
     setSelectedMarker(item);
     setDisplayData([item]);
@@ -55,23 +65,24 @@ function LeafletMap() {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         {data.map((item) => (
-          <Marker
-            key={item.id}
-            position={[item.latitude, item.longitude]}
-            eventHandlers={{
-              click: () => {
-                console.log("Marker clicked");
-                handleMarkerClick(item);
-              },
-            }}
-          >
-            <Popup position={[item.latitude, item.longitude]} onClose={handleClosePopup}>
-              <div className="popup">
-                <h2>{item.name}</h2>
-                <p>{item.description}</p>
-              </div>
-            </Popup>
-          </Marker>
+         <Marker
+         key={item.id}
+         position={[item.latitude, item.longitude]}
+         eventHandlers={{
+           click: () => {
+             console.log("Marker clicked");
+             handleMarkerClick(item);
+           },
+           popupclose: handleClosePopup,
+         }}
+       >
+         <Popup position={[item.latitude, item.longitude]}>
+           <div className="popup">
+             <h2>{item.name}</h2>
+             <p>{item.description}</p>
+           </div>
+         </Popup>
+       </Marker>
         ))}
       </MapContainer>
       <CardHolder data={displayData} />

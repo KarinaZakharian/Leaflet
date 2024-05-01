@@ -3,16 +3,30 @@ import { useAppDispatch } from '../../hooks/redux';
 //import { updateCoordinates } from '../../../store/reducers/search';
 import './FormComponents.scss';
 
+
+interface Address {
+  properties: {
+    label: string;
+  };
+  geometry: {
+    coordinates: number[];
+  };
+}
+
+interface Addresses {
+  features: Address[];
+}
+
 interface AutoCompleteProps {
   style: React.CSSProperties;
   setCoordinates: (geolocalisation: { x: number; y: number }) => void;
-  value: string | null;
+
 }
 
 function AutoComplete({ setCoordinates, ...props }: AutoCompleteProps) {
-  const [addresses, setAdresses] = useState([]);
+  const [addresses, setAdresses] = useState<Addresses | null>(null);
   const [query, setQuery] = useState('');
-  const dispatch = useAppDispatch();
+
 
   const getAddressesFromAPI = async (search: string) => {
     try {
@@ -44,7 +58,7 @@ function AutoComplete({ setCoordinates, ...props }: AutoCompleteProps) {
     y: number;
   }) => {
     setCoordinates(geolocalisation);
-    setAdresses([]);
+    setAdresses(null);
   };
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(event.target.value);

@@ -1,14 +1,26 @@
-import React from 'react';
+import React, { ChangeEvent } from 'react';
 import './FormComponents.scss'
 
-const Selector = ({ options, selectedValue, onChange }) => {
-  const handleSelectionChange = (e) => {
+
+interface Option {
+  value: string;
+  label: string;
+}
+
+interface SelectorProps {
+  options: Option[];
+  selectedValue: string;
+  onChange: (value: string) => void;
+}
+
+const Selector: React.FC<SelectorProps> = ({ options, selectedValue, onChange }) => {
+  const handleSelectionChange = (e: ChangeEvent<HTMLSelectElement>) => {
     const newValue = e.target.value;
     onChange(newValue);
   };
 
   return (
-    <select className="select"value={selectedValue} onChange={handleSelectionChange}>
+    <select className="select" value={selectedValue} onChange={handleSelectionChange}>
       {options.map(option => (
         <option key={option.value} value={option.value}>{option.label}</option>
       ))}

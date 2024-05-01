@@ -13,7 +13,7 @@ interface Apartment {
   longitude: number;
 }
 
-function CardHolder({ data } :Apartment) {
+function CardHolder({ data }: { data: Apartment[] }) {
   console.log(data)
   return (
     <div className="card__holder">
@@ -28,7 +28,6 @@ function CardHolder({ data } :Apartment) {
             description={apartment.description}
             price={apartment.price}
             photo={apartment.photo}
-         
           />
         ))
       )}

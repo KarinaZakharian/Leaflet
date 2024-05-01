@@ -11,7 +11,7 @@ const LanguageSelector = () => {
 
   const [selectedLanguage, setSelectedLanguage] = useState('en');
 
-  const handleLanguageChange = (newLanguage) => {
+  const handleLanguageChange = (newLanguage: string) => {
     setSelectedLanguage(newLanguage);
     // Perform any additional logic here based on the selected language
   };

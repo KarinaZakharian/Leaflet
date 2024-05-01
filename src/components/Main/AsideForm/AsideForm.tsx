@@ -15,7 +15,7 @@ function AsideForm() {
     
   
     // Function to toggle the open/close state of each category
-    const toggleCategory = (category) => {
+    const toggleCategory = (category: string) => {
       switch (category) {
         case 'category1':
           setCategory1Open(true);
@@ -31,7 +31,7 @@ function AsideForm() {
           break;
       }
     };
-    const closeCategorie = (event, category) => {
+    const closeCategorie = (event: React.MouseEvent, category: string) => {
         event.stopPropagation();
 
         switch (category) {
