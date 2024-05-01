@@ -6,7 +6,7 @@ export const apartmentSchema = yup.object().shape({
     user_address: yup.string().required(),
     description: yup.string().required(),
     price: yup.string().required(),
-    latitude: yup.number().required(),
-    longitude: yup.number().required(),
+    latitude: yup.number().required().notOneOf([0]),
+    longitude: yup.number().required().notOneOf([0]),
    
   });
